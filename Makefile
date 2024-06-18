@@ -4,14 +4,14 @@ CXXFLAGS = -std=c++20 -stdlib=libc++ -g \
 		-Wall -Wextra -Wpedantic \
 		-Wno-unused-parameter -Wno-unused-variable \
 		-Wno-deprecated-volatile -Wno-unused-function \
-		-I/usr/local/include/glad -I/usr/local/include/spdlog \
+		-I/usr/local/include/glad \
 		-I/usr/local/include/glm \
-		$(pkg-config --cflags assimp glfw3)
+		$(shell pkg-config --cflags assimp glfw3 spdlog)
 
 LDFLAGS = -g -framework OpenGL -framework IOKit \
 		  -framework CoreVideo -framework Cocoa \
-		  -Ldeps/lib -L/usr/local/lib -lglad \
-		  $(pkg-config --libs assimp glfw3)
+		  -L/usr/local/lib -lglad \
+		  $(shell pkg-config --libs assimp glfw3 spdlog)
 
 
 GAME_OUT = ./a.out

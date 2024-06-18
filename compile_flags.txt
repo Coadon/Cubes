@@ -8,5 +8,8 @@
 -Wno-unused-variable
 -Wno-deprecated-volatile
 -I/usr/local/include/glad
--I/usr/local/include/spdlog
 -I/usr/local/include/glm
+-I/opt/homebrew/Cellar/glfw/3.4/include
+-I/opt/homebrew/Cellar/spdlog/1.14.1/include
+-I/opt/homebrew/Cellar/fmt/10.2.1_1/include
+-Ideps/include

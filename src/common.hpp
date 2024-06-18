@@ -18,7 +18,7 @@
 
 #include "spdlog/spdlog.h"
 
-#define LOGGER (*spdlog::get("main"))
+#define LOGGER (*spdlog::get("stdout"))
 
 typedef uint8_t u8;
 typedef uint16_t u16;
@@ -33,4 +33,4 @@ typedef int64_t i64;
 typedef float float32_t, f32;
 typedef double float64_t, f64;
 
-typedef void *HANDLE;
+typedef void *handle;
