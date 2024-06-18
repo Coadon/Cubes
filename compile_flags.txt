@@ -1,0 +1,12 @@
+-std=c++20
+-stdlib=libc++
+-Wall
+-Wextra
+-Wpedantic
+-Wno-unused-parameter
+-Wno-unused-function
+-Wno-unused-variable
+-Wno-deprecated-volatile
+-I/usr/local/include/glad
+-I/usr/local/include/spdlog
+-I/usr/local/include/glm
