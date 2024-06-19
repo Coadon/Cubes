@@ -3,17 +3,11 @@
 #include <glad.h>
 #include "glm/common.hpp"
 #include "window.hpp"
+#include "common.hpp"
 
 using namespace std;
 
 struct Window window;
-
-static void _buttonArrayUpdate(size_t n, struct Window::Button *buttons) {
-    for (size_t i = 0; i < n; i++) {
-        buttons[i].pressed = buttons[i].down && !buttons[i].last;
-        buttons[i].last = buttons[i].down;
-    }
-}
 
 bool windowInit() {
     glfwSetErrorCallback(
@@ -111,6 +105,13 @@ bool windowInit() {
     return true;
 }
 
+static void _buttonArrayUpdate(size_t n, struct Window::Button *buttons) {
+    for (size_t i = 0; i < n; i++) {
+        buttons[i].pressed = buttons[i].down && !buttons[i].last;
+        buttons[i].last = buttons[i].down;
+    }
+}
+
 #define SEC_PER_TICK 0.05
 #define COUNTERS_RESET_TIME 1
 void windowLoop(function<void()> update, function<void()> render, function<void()> tick,
@@ -134,7 +135,7 @@ void windowLoop(function<void()> update, function<void()> render, function<void(
         lastFrame = curntFrame;
 
         lapsesec += window.dt;
-        if (lapsesec >=COUNTERS_RESET_TIME) {
+        if (lapsesec >= COUNTERS_RESET_TIME) {
             window.fps = frmctrsec;
             window.tps = tikctrsec;
             frmctrsec = 0;
@@ -163,6 +164,8 @@ void windowLoop(function<void()> update, function<void()> render, function<void(
         glfwSwapBuffers(window.handle);
         glfwPollEvents();
     }
+
+    LOGGER.debug("{}", "Terminating Routine");
 
     end();
 

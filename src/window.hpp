@@ -1,7 +1,9 @@
 #pragma once
 
+#include <functional>
 #include <GLFW/glfw3.h>
-#include "common.hpp"
+#include "glm/glm.hpp"
+#include "types.hpp"
 
 /**
  * A window system
