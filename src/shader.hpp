@@ -3,6 +3,7 @@
 #include <string>
 #include <glad/glad.h>
 #include <glm/glm.hpp>
+#include "gfxobj.hpp"
 #include "texture.hpp"
 #include "common.hpp"
 
