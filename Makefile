@@ -14,7 +14,7 @@ LDFLAGS = -g -framework OpenGL -framework IOKit \
 		  $(shell pkg-config --libs assimp glfw3 spdlog)
 
 
-GAME_OUT = ./a.out
+GAME_OUT = build/game
 CXX_SRC = $(wildcard src/*.cpp)
 CXX_OBJ = $(CXX_SRC:.cpp=.o)
 
